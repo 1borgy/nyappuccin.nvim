@@ -328,6 +328,16 @@ M.theme = lush(function(injected_functions)
 
     sym("@attribute")({ fg = C.purple }),
 
+    illuminatedWord({ bg = C.purple.mix(C.base, 75) }),
+    illuminatedCurWord({ illuminatedWord }),
+    IlluminatedWordRead({ illuminatedWord }),
+    IlluminatedWordText({ illuminatedWord }),
+    IlluminatedWordWrite({ illuminatedWord }),
+    LspReferenceRead({ illuminatedWord }),
+    LspReferenceText({ illuminatedWord }),
+    LspReferenceWrite({ illuminatedWord }),
+    QuickFixLine({ illuminatedWord }),
+
     SnacksDashboardHeader({ fg = C.pink }),
     SnacksDashboardFooter({ fg = C.lavender }),
     SnacksDashboardIcon({ fg = C.purple }),
@@ -335,8 +345,8 @@ M.theme = lush(function(injected_functions)
     SnacksDashboardDesc({ fg = C.lavender }),
     SnacksDashboardSpecial({ fg = C.red }),
 
-    -- SnacksIndentScope { fg = C.purple },
-    -- SnacksIndent { fg = C.surface1 },
+    SnacksIndentScope({ fg = C.purple }),
+    SnacksIndent({ fg = C.surface0 }),
 
     -- MiniFilesDirectory { fg = C.lavender },
     -- MiniFilesTitle { fg = C.red, bold = false },
@@ -402,19 +412,9 @@ M.theme = lush(function(injected_functions)
     GitGraphBranch4({ fg = C.pink }),
     GitGraphBranch5({ fg = C.red }),
 
-    illuminatedWord({ bg = C.purple.mix(C.base, 75) }),
-    illuminatedCurWord({ illuminatedWord }),
-    IlluminatedWordRead({ illuminatedWord }),
-    IlluminatedWordText({ illuminatedWord }),
-    IlluminatedWordWrite({ illuminatedWord }),
-    LspReferenceRead({ illuminatedWord }),
-    LspReferenceText({ illuminatedWord }),
-    LspReferenceWrite({ illuminatedWord }),
-    QuickFixLine({ illuminatedWord }),
-
     SnacksPickerCursorLine({ CursorLine }),
 
-    DropBarIconUIPickPivot({ fg = C.pink, bold = true }),
+    DropBarIconUIPickPivot({ fg = C.purple, bold = true }),
     DropBarIconKindFolder({ fg = C.purple }),
     MiniFilesDirectory({ fg = C.lavender }),
 
@@ -426,6 +426,14 @@ M.theme = lush(function(injected_functions)
     GitConflictCurrent({ bg = C.pink.mix(C.base, 65) }),
     GitConflictAncestor({ bg = C.teal.mix(C.base, 65) }),
     GitConflictIncoming({ bg = C.purple.mix(C.base, 65) }),
+
+    GrugFarInputLabel({ fg = C.purple }),
+    GrugFarHelpHeaderKey({ fg = C.red }),
+
+    ErrorMsg({ fg = C.lavender }),
+    MoreMsg({ fg = C.lavender }),
+    WarningMsg({ fg = C.lavender }),
+    ModeMsg({ fg = C.lavender }),
   }
 end)
 
