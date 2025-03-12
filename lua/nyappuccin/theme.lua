@@ -434,6 +434,8 @@ M.theme = lush(function(injected_functions)
     MoreMsg({ fg = C.lavender }),
     WarningMsg({ fg = C.lavender }),
     ModeMsg({ fg = C.lavender }),
+
+    MarkviewCode({ bg = C.mantle }),
   }
 end)
 
