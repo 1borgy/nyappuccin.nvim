@@ -1,6 +1,6 @@
 local colors = {
-	-- PATCH_OPEN
-Normal = {fg = "#D0C7F5", bg = "#342E4D"},
+  -- PATCH_OPEN
+Normal = {fg = "#D0C7F5"},
 NormalFloat = {link = "Normal"},
 NormalNC = {link = "Normal"},
 Pmenu = {link = "Normal"},
@@ -42,8 +42,9 @@ DiffText = {bg = "#815A68"},
 Directory = {fg = "#B09EFA", bold = true},
 DocumentationBorder = {},
 DropBarIconKindFolder = {fg = "#9377F8"},
-DropBarIconUIPickPivot = {fg = "#E095EF", bold = true},
+DropBarIconUIPickPivot = {fg = "#9377F8", bold = true},
 Error = {bg = "#7E4A8C"},
+ErrorMsg = {fg = "#B09EFA"},
 Exception = {fg = "#E779DE"},
 FloatBorder = {fg = "#E779DE"},
 FloatTitle = {link = "FloatBorder"},
@@ -66,6 +67,8 @@ GitGraphBranchName = {fg = "#9377F8"},
 GitGraphBranchTag = {fg = "#E779DE"},
 GitGraphHash = {fg = "#E095EF"},
 GitGraphTimestamp = {fg = "#B09EFA"},
+GrugFarHelpHeaderKey = {fg = "#E779DE"},
+GrugFarInputLabel = {fg = "#9377F8"},
 Identifier = {fg = "#B09EFA"},
 Include = {fg = "#E779DE"},
 Keyword = {fg = "#E779DE"},
@@ -77,6 +80,8 @@ Macro = {fg = "#E779DE"},
 MatchParen = {fg = "#E095EF", bg = "#5F3D7F"},
 MiniFilesDirectory = {fg = "#B09EFA"},
 MiniIconsAzure = {fg = "#9377F8"},
+ModeMsg = {fg = "#B09EFA"},
+MoreMsg = {fg = "#B09EFA"},
 NonText = {fg = "#56506D"},
 Number = {fg = "#E095EF"},
 Float = {link = "Number"},
@@ -86,6 +91,7 @@ PmenuThumb = {bg = "#E779DE"},
 PreCondit = {fg = "#E095EF"},
 PreProc = {fg = "#E095EF"},
 Removed = {fg = "#E779DE"},
+RenderMarkdownCode = {bg = "#2D283E"},
 Repeat = {fg = "#E779DE"},
 Search = {fg = "#9377F8", bg = "#433678"},
 NoiceVirtualText = {link = "Search"},
@@ -95,6 +101,8 @@ SnacksDashboardHeader = {fg = "#E095EF"},
 SnacksDashboardIcon = {fg = "#9377F8"},
 SnacksDashboardKey = {fg = "#9377F8"},
 SnacksDashboardSpecial = {fg = "#E779DE"},
+SnacksIndent = {fg = "#454059"},
+SnacksIndentScope = {fg = "#9377F8"},
 Special = {fg = "#E779DE"},
 SpecialChar = {fg = "#E779DE"},
 SpecialComment = {fg = "#9377F8"},
@@ -112,6 +120,7 @@ Underlined = {bold = true},
 VertSplit = {bg = "#2D283E"},
 Winseparator = {link = "VertSplit"},
 Visual = {bg = "#53438E"},
+WarningMsg = {fg = "#B09EFA"},
 Whitespace = {fg = "#56506D"},
 WinBar = {fg = "#D0C7F5"},
 WinBarNC = {link = "WinBar"},
@@ -140,7 +149,7 @@ illuminatedCurWord = {link = "illuminatedWord"},
 ["@variable"] = {fg = "#D0C7F5"},
 ["@variable.builtin"] = {fg = "#69CAF7"},
 ["@variable.parameter"] = {fg = "#D0C7F5"},
-	-- PATCH_CLOSE
+  -- PATCH_CLOSE
 }
 
 -- colorschemes generally want to do this
@@ -150,5 +159,5 @@ vim.cmd("let g:colors_name='nyappuccin'")
 
 -- apply highlight groups
 for group, attrs in pairs(colors) do
-	vim.api.nvim_set_hl(0, group, attrs)
+  vim.api.nvim_set_hl(0, group, attrs)
 end

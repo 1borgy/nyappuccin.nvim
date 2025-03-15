@@ -435,7 +435,7 @@ M.theme = lush(function(injected_functions)
     WarningMsg({ fg = C.lavender }),
     ModeMsg({ fg = C.lavender }),
 
-    MarkviewCode({ bg = C.mantle }),
+    RenderMarkdownCode({ bg = C.mantle }),
   }
 end)
 
