@@ -92,7 +92,7 @@ M.theme = lush(function(injected_functions)
     -- TermCursorNC   { }, -- Cursor in an unfocused terminal
     -- ErrorMsg       { }, -- Error messages on the command line
     VertSplit({ bg = C.mantle }), -- Column separating vertically split windows
-    Folded({ bg = C.purple, fg = C.purple.mix(C.base, 80).de(20) }), -- Line used for closed folds
+    Folded({ bg = C.red.mix(C.base, 80).de(20) }), -- Line used for closed folds
     -- FoldColumn     { }, -- 'foldcolumn'
     -- SignColumn     { }, -- Column where |signs| are displayed
     -- IncSearch      { }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
@@ -221,11 +221,11 @@ M.theme = lush(function(injected_functions)
     DiagnosticInfo({ fg = C.purple }), -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     DiagnosticHint({ fg = C.teal }), -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     DiagnosticOk({ fg = C.green }), -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    -- DiagnosticVirtualTextError { } , -- Used for "Error" diagnostic virtual text.
-    -- DiagnosticVirtualTextWarn  { } , -- Used for "Warn" diagnostic virtual text.
-    -- DiagnosticVirtualTextInfo  { } , -- Used for "Info" diagnostic virtual text.
-    -- DiagnosticVirtualTextHint  { } , -- Used for "Hint" diagnostic virtual text.
-    -- DiagnosticVirtualTextOk    { } , -- Used for "Ok" diagnostic virtual text.
+    DiagnosticVirtualTextError({ fg = C.red, bg = C.red.mix(C.base, 80).de(10) }), -- Used for "Error" diagnostic virtual text.
+    DiagnosticVirtualTextWarn({ fg = C.yellow, bg = C.yellow.mix(C.base, 80).de(10) }), -- Used for "Warn" diagnostic virtual text.
+    DiagnosticVirtualTextInfo({ fg = C.purple, bg = C.purple.mix(C.base, 80).de(10) }), -- Used for "Info" diagnostic virtual text.
+    DiagnosticVirtualTextHint({ fg = C.teal, bg = C.teal.mix(C.base, 80).de(10) }), -- Used for "Hint" diagnostic virtual text.
+    DiagnosticVirtualTextOk({ fg = C.green, bg = C.green.mix(C.base, 80).de(10) }), -- Used for "Ok" diagnostic virtual text.
     DiagnosticUnderlineError({ sp = C.red, underline = false, undercurl = true }), -- Used to underline "Error" diagnostics.
     DiagnosticUnderlineWarn({ sp = C.yellow, underline = false, undercurl = true }), -- Used to underline "Warn" diagnostics.
     DiagnosticUnderlineInfo({ sp = C.purple, underline = false, undercurl = true }), -- Used to underline "Info" diagnostics.
@@ -420,12 +420,15 @@ M.theme = lush(function(injected_functions)
 
     MiniIconsAzure({ fg = C.purple }),
 
-    GitConflictCurrentLabel({ bg = C.pink, fg = C.base }),
-    GitConflictAncestorLabel({ bg = C.teal, fg = C.base }),
-    GitConflictIncomingLabel({ bg = C.purple, fg = C.base }),
     GitConflictCurrent({ bg = C.pink.mix(C.base, 65) }),
     GitConflictAncestor({ bg = C.teal.mix(C.base, 65) }),
     GitConflictIncoming({ bg = C.purple.mix(C.base, 65) }),
+    -- GitConflictCurrentLabel({ bg = C.pink, fg = C.base }),
+    -- GitConflictAncestorLabel({ bg = C.teal, fg = C.base }),
+    -- GitConflictIncomingLabel({ bg = C.purple, fg = C.base }),
+    GitConflictCurrentLabel({ GitConflictCurrent }),
+    GitConflictAncestorLabel({ GitConflictAncestor }),
+    GitConflictIncomingLabel({ GitConflictIncoming }),
 
     GrugFarInputLabel({ fg = C.purple }),
     GrugFarHelpHeaderKey({ fg = C.red }),
