@@ -1,7 +1,7 @@
 local M = {}
 
 M.defaults = {
-  compiled = false,
+  compiled = true,
 }
 
 M.setup = function(opts)

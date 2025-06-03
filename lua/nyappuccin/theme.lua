@@ -47,16 +47,6 @@ local lush = require("lush")
 
 local M = {}
 
-M.blend = function(color, base, opts)
-  opts = vim.tbl_extend("force", {
-    mix = 65,
-    de = 0,
-    sa = 0,
-  }, opts or {})
-
-  return color.mix(base, opts.mix).de(opts.de).sa(opts.sa)
-end
-
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
 -- support an annotation like the following. Consult your server documentation.
 ---@diagnostic disable: undefined-global
@@ -109,12 +99,12 @@ M.theme = lush(function(injected_functions)
     -- MsgSeparator   { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     -- MoreMsg        { }, -- |more-prompt|
     NonText({ fg = C.surface1 }), -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-    Normal({ fg = C.text }), -- Normal text
+    Normal({ bg = C.base, fg = C.text }), -- Normal text
     NormalFloat({ Normal }), -- Normal text in floating windows.
-    FloatBorder({ fg = C.red }), -- Border of floating windows.
-    FloatTitle({ FloatBorder }), -- Title of floating windows.
+    FloatBorder({ fg = C.surface1 }), -- Border of floating windows.
+    FloatTitle({ fg = C.lavender }), -- Title of floating windows.
     -- NormalNC { fg = C.lavender, bg = C.mantle }, -- normal text in non-current windows
-    NormalNC({ Normal }),
+    -- NormalNC({ Normal }),
     Pmenu({ Normal }), -- Popup menu: Normal item.
     PmenuSel({ CursorLine }), -- Popup menu: Selected item.
     -- PmenuKind      { }, -- Popup menu: Normal item "kind"
@@ -352,11 +342,11 @@ M.theme = lush(function(injected_functions)
     -- MiniFilesTitle { fg = C.red, bold = false },
     -- MiniFilesTitleFocused { fg = C.red },
 
-    CompletionBorder({ fg = C.red }),
-    DocumentationBorder({ fg = C.red2 }),
+    CompletionBorder({ fg = C.surface1 }),
+    DocumentationBorder({ fg = C.surface1 }),
 
-    BlinkCmpMenuBorder({ fg = C.red }),
-    BlinkCmpDocBorder({ fg = C.red }),
+    BlinkCmpMenuBorder({ fg = C.surface1 }),
+    BlinkCmpDocBorder({ fg = C.surface1 }),
     BlinkCmpMenuSelection({ CursorLine }),
 
     -- BlinkCmpKindField { fg = C.red },
@@ -418,7 +408,7 @@ M.theme = lush(function(injected_functions)
     DropBarIconKindFolder({ fg = C.purple }),
     MiniFilesDirectory({ fg = C.lavender }),
 
-    MiniIconsAzure({ fg = C.purple }),
+    -- MiniIconsAzure({ fg = C.purple }),
 
     GitConflictCurrent({ bg = C.pink.mix(C.base, 65) }),
     GitConflictAncestor({ bg = C.teal.mix(C.base, 65) }),
