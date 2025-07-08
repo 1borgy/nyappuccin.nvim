@@ -7,7 +7,7 @@ M.defaults = {
 M.setup = function(opts)
   opts = vim.tbl_extend("force", M.defaults, opts or {})
 
-  if opts.compiled then
+  if false and opts.compiled then
     vim.cmd.colorscheme("nyappuccin")
   else
     local theme = require("nyappuccin.theme")

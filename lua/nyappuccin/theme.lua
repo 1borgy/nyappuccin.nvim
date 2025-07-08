@@ -123,9 +123,9 @@ M.theme = lush(function(injected_functions)
     -- SpellRare      { }, -- Word that is recognized by the spellchecker as one that is hardly ever used. |spell| Combined with the highlighting used otherwise.
     StatusLine({ bg = C.base }), -- Status line of current window
     -- StatusLineNC   { }, -- Status lines of not-current windows. Note: If this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-    -- TabLine        { }, -- Tab pages line, not active tab page label
-    -- TabLineFill    { }, -- Tab pages line, where there are no labels
-    -- TabLineSel     { }, -- Tab pages line, active tab page label
+    TabLine({ bg = C.base }), -- Tab pages line, not active tab page label
+    TabLineFill({ bg = C.base }), -- Tab pages line, where there are no labels
+    TabLineSel({ bg = C.base }), -- Tab pages line, active tab page label
     Title({ fg = C.red, bold = true }), -- Titles for output from ":set all", ":autocmd" etc.
     Visual({ bg = C.purple.mix(C.base, 65).de(25) }), -- Visual mode selection
     -- VisualNOS      { }, -- Visual mode selection when vim is "Not Owning the Selection".
@@ -429,6 +429,25 @@ M.theme = lush(function(injected_functions)
     ModeMsg({ fg = C.lavender }),
 
     RenderMarkdownCode({ bg = C.mantle }),
+    RenderMarkdownH1({ fg = C.red }),
+    RenderMarkdownH1Bg({ fg = C.red, bg = C.red.mix(C.base, 65) }),
+    RenderMarkdownH2({ fg = C.green }),
+    RenderMarkdownH2Bg({ fg = C.green, bg = C.green.mix(C.base, 65) }),
+    RenderMarkdownH3({ fg = C.blue }),
+    RenderMarkdownH3Bg({ fg = C.blue, bg = C.blue.mix(C.base, 65) }),
+    RenderMarkdownH4({ fg = C.yellow }),
+    RenderMarkdownH4Bg({ fg = C.yellow, bg = C.yellow.mix(C.base, 65) }),
+    RenderMarkdownH5({ fg = C.purple }),
+    RenderMarkdownH5Bg({ fg = C.purple, bg = C.purple.mix(C.base, 65) }),
+    RenderMarkdownH6({ fg = C.pink }),
+    RenderMarkdownH6Bg({ fg = C.pink, bg = C.pink.mix(C.base, 65) }),
+
+    -- MiniDiffOverAdd({ bg = C.green.mix(C.base, 65) }),
+    -- MiniDiffOverChange({ bg = C.yellow.mix(C.base, 65) }),
+    -- MiniDiffOverChangeBuf({ bg = C.yellow.mix(C.base, 65) }),
+    -- MiniDiffOverDelete({ bg = C.red.mix(C.base, 65) }),
+    -- MiniDiffOverContext({ bg = C.surface0, clear = false }),
+    -- MiniDiffOverContextBuf({ bg = C.surface0, clear = false }),
   }
 end)
 
