@@ -81,7 +81,7 @@ M.theme = lush(function(injected_functions)
     -- TermCursor     { }, -- Cursor in a focused terminal
     -- TermCursorNC   { }, -- Cursor in an unfocused terminal
     -- ErrorMsg       { }, -- Error messages on the command line
-    VertSplit({ bg = C.mantle }), -- Column separating vertically split windows
+    VertSplit({ fg = C.mantle }), -- Column separating vertically split windows
     Folded({ bg = C.red.mix(C.base, 80).de(20) }), -- Line used for closed folds
     -- FoldColumn     { }, -- 'foldcolumn'
     -- SignColumn     { }, -- Column where |signs| are displayed
@@ -335,7 +335,7 @@ M.theme = lush(function(injected_functions)
     SnacksDashboardDesc({ fg = C.lavender }),
     SnacksDashboardSpecial({ fg = C.red }),
 
-    SnacksIndentScope({ fg = C.purple }),
+    SnacksIndentScope({ fg = C.overlay0 }),
     SnacksIndent({ fg = C.surface0 }),
 
     -- MiniFilesDirectory { fg = C.lavender },
