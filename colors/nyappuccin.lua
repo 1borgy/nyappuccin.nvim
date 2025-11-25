@@ -1,6 +1,6 @@
 local colors = {
   -- PATCH_OPEN
-Normal = {fg = "#D0C7F5", bg = "#342E4D"},
+Normal = {fg = "#D0C7F5"},
 NormalFloat = {link = "Normal"},
 Pmenu = {link = "Normal"},
 Added = {fg = "#75D1BA"},
@@ -135,7 +135,7 @@ Todo = {fg = "#69CAF7", bold = true},
 Type = {fg = "#75D1BA"},
 Typedef = {fg = "#75D1BA"},
 Underlined = {bold = true},
-VertSplit = {fg = "#534B71"},
+VertSplit = {fg = "#2D283E"},
 Winseparator = {link = "VertSplit"},
 Visual = {bg = "#53438E"},
 WarningMsg = {fg = "#B09EFA"},

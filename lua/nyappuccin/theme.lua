@@ -81,7 +81,7 @@ M.theme = lush(function(injected_functions)
     -- TermCursor     { }, -- Cursor in a focused terminal
     -- TermCursorNC   { }, -- Cursor in an unfocused terminal
     -- ErrorMsg       { }, -- Error messages on the command line
-    VertSplit({ fg = C.surface1 }), -- Column separating vertically split windows
+    VertSplit({ fg = C.mantle }), -- Column separating vertically split windows
     Folded({ bg = C.red.mix(C.base, 80).de(20) }), -- Line used for closed folds
     -- FoldColumn     { }, -- 'foldcolumn'
     -- SignColumn     { }, -- Column where |signs| are displayed
@@ -99,7 +99,8 @@ M.theme = lush(function(injected_functions)
     -- MsgSeparator   { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     -- MoreMsg        { }, -- |more-prompt|
     NonText({ fg = C.surface1 }), -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-    Normal({ bg = C.base, fg = C.text }), -- Normal text
+    -- Normal({ bg = C.base, fg = C.text }), -- Normal text
+    Normal({ fg = C.text }), -- Normal text
     NormalFloat({ Normal }), -- Normal text in floating windows.
     FloatBorder({ fg = C.surface1 }), -- Border of floating windows.
     FloatTitle({ fg = C.lavender }), -- Title of floating windows.

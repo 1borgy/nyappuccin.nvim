@@ -206,3 +206,112 @@ run({
   palette_14 = C.purple,
   palette_15 = C.text,
 }, Ghostty.transform, { overwrite, "build/ghostty/nyappuccin" })
+
+local Tmux = {}
+
+Tmux.template = [[
+set -gq @thm_bg "$bg"
+set -gq @thm_fg "$fg"
+set -gq @thm_rosewater "$rosewater"
+set -gq @thm_flamingo "$flamingo"
+set -gq @thm_pink "$pink"
+set -gq @thm_mauve "$mauve"
+set -gq @thm_red "$red"
+set -gq @thm_maroon "$maroon"
+set -gq @thm_peach "$peach"
+set -gq @thm_yellow "$yellow"
+set -gq @thm_green "$green"
+set -gq @thm_teal "$teal"
+set -gq @thm_sky "$sky"
+set -gq @thm_sapphire "$sapphire"
+set -gq @thm_blue "$blue"
+set -gq @thm_lavender "$lavender"
+set -gq @thm_subtext_1 "$subtext_1"
+set -gq @thm_subtext_0 "$subtext_0"
+set -gq @thm_overlay_2 "$overlay_2"
+set -gq @thm_overlay_1 "$overlay_1"
+set -gq @thm_overlay_0 "$overlay_0"
+set -gq @thm_surface_2 "$surface_2"
+set -gq @thm_surface_1 "$surface_1"
+set -gq @thm_surface_0 "$surface_0"
+set -gq @thm_mantle "$mantle"
+set -gq @thm_crust "$crust"
+]]
+
+Tmux.check_keys = {
+  "bg",
+  "fg",
+  "rosewater",
+  "flamingo",
+  "pink",
+  "mauve",
+  "red",
+  "maroon",
+  "peach",
+  "yellow",
+  "green",
+  "teal",
+  "sky",
+  "sapphire",
+  "blue",
+  "lavender",
+  "subtext_1",
+  "subtext_0",
+  "overlay_2",
+  "overlay_1",
+  "overlay_0",
+  "surface_2",
+  "surface_1",
+  "surface_0",
+  "mantle",
+  "crust",
+}
+
+Tmux.transform = function(colors)
+  for _, key in ipairs(Tmux.check_keys) do
+    assert(colors[key], "tmux colors table missing required key: " .. key)
+  end
+
+  for k, v in pairs(colors) do
+    colors[k] = "#" .. string.sub(string.lower(tostring(v)), 2)
+  end
+
+  local replaced = helpers.split_newlines(helpers.apply_template(Tmux.template, colors))
+  local kept = {}
+  for _, line in ipairs(replaced) do
+    if not string.match(line, "%$") then
+      table.insert(kept, line)
+    end
+  end
+
+  return kept
+end
+
+run({
+  bg = C.base,
+  fg = C.text,
+  rosewater = C.pink,
+  flamingo = C.pink,
+  pink = C.pink,
+  mauve = C.purple,
+  red = C.red,
+  maroon = C.red,
+  peach = C.yellow,
+  yellow = C.yellow,
+  green = C.green,
+  teal = C.teal,
+  sky = C.teal,
+  sapphire = C.blue,
+  blue = C.blue,
+  lavender = C.lavender,
+  subtext_1 = C.subtext1,
+  subtext_0 = C.subtext0,
+  overlay_2 = C.overlay2,
+  overlay_1 = C.overlay1,
+  overlay_0 = C.overlay0,
+  surface_2 = C.surface2,
+  surface_1 = C.surface1,
+  surface_0 = C.surface0,
+  mantle = C.mantle,
+  crust = C.crust,
+}, Tmux.transform, { overwrite, "build/tmux/nyappuccin.conf" })
